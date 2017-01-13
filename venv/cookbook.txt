@@ -1,0 +1,20 @@
+# activating virtual environment
+. venv/bin/activate
+
+# running Flask app
+export FLASK_APP=app.py
+flask run
+
+# debug mode
+export FLASK_DEBUG=1
+flask run
+
+# creating db table
+from app import db
+db.create_all()
+
+# cookbook
+. bin/activate
+export FLASK_APP=app.py
+export FLASK_DEBUG=1
+flask run

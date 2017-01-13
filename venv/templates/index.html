@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  
+</head>
+<body align="center">
+  <h1>Bellbird.</h1>
+  <div>
+    <h2></h2>
+    <form method=POST action="{{ url_for('addAlarm') }}">
+      <input name="text" placeholder="What is on your mind?" style="height:42px">
+      <button type="submit" style="cursor:pointer">Submit!</button>
+    </form>
+  </div>
+  <br />
+  <br />
+
+  {% for alarm in alarms %}
+    <div class="alarm">{{ alarm.text }}</div>
+    <img src="{{ url_for('static', filename='upvote.png') }}" class="upvoteButton" width="22" height="22" id="{{ alarm.id }}" style="cursor:pointer">
+    <a>{{ alarm.numOfUpvotes }}</a>
+    <br />
+    <br />
+  {% endfor %}
+
+  <script type="text/javascript" src="{{ url_for('static', filename='upvoter.js') }}"></script>
+
+</body>
+</html>
