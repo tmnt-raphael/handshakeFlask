@@ -20,7 +20,7 @@
   {% for alarm in alarms %}
     <div class="alarm">{{ alarm.text }}</div>
     <img src="{{ url_for('static', filename='upvote.png') }}" class="upvoteButton" width="22" height="22" id="{{ alarm.id }}" style="cursor:pointer">
-    <a>{{ alarm.numOfUpvotes }}</a>
+    <span id="a{{ alarm.id }}">{{ alarm.numOfUpvotes }}</span>
     <br />
     <br />
   {% endfor %}
